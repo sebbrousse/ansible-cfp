@@ -3,11 +3,11 @@
   sudo: yes
   tasks:
     - name: Clone CFP repository
-        command: 'git clone git@bitbucket.org:breizhcamp/cfp-devoxx-fr.git'
+      command: 'git clone git@bitbucket.org:breizhcamp/cfp-devoxx-fr.git'
     - name: Use production configuration
-        command: 'cp cfp-breizhcamp-conf/application.prod.conf cfp-devoxx-fr/conf/application.conf'
+      command: 'cp cfp-breizhcamp-conf/application.prod.conf cfp-devoxx-fr/conf/application.conf'
     - name: Build Docker image
-        command: 'docker build -t breizhcamp/cfp-webapp cfp-devoxx-fr'
+      command: 'docker build -t breizhcamp/cfp-webapp cfp-devoxx-fr'
     - name: Push image to registry
-        command: 'docker push localhost:5000'
+      command: 'docker push localhost:5000'
 
